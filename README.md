@@ -190,14 +190,15 @@ logged in the `responses` table with mode/status/timestamp.
 ## 13. Setup & running
 
 ```bash
-# 0. dataset (already extracted to data/ in this workspace)
-unzip ~/Downloads/archive.zip -d data/     # dec12_18features.csv + nineteenFeaturesDf.csv
+# 0. dataset — put the two CSVs into the data/ folder (see data/README.md)
+#    data/dec12_18features.csv  +  data/nineteenFeaturesDf.csv
+#    (from Kaggle: "AWS CloudTrail Dataset from flaws.cloud" — unzip archive.zip into data/)
 
-# 1. backend deps (Python 3.12 venv)
+# 1. backend deps (Python 3.12 venv, CPU-only torch)
 uv venv --python 3.12 .venv
-.venv/bin/python -m pip install -r backend/requirements.txt
-# or: uv pip install --python .venv/bin/python torch --index-url https://download.pytorch.org/whl/cpu
-#     uv pip install --python .venv/bin/python pandas numpy fastapi "uvicorn[standard]" pytest httpx python-dotenv
+uv pip install --python .venv/bin/python torch --index-url https://download.pytorch.org/whl/cpu
+uv pip install --python .venv/bin/python -r backend/requirements.txt
+# (no uv? install it with: pip install uv  — or use: python3 -m venv .venv)
 
 cp .env.example .env        # edit if needed; no secrets required
 
