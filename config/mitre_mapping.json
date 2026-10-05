@@ -1,0 +1,128 @@
+{
+  "_comment": "Evidence-based MITRE ATT&CK mapping rules. Technique IDs verified against attack.mitre.org. A rule fires only when the detected window actually contains the listed CloudTrail evidence (counts are per 32-event window). If no rule fires, the result is 'No confident MITRE mapping'. This layer is SEPARATE from the GRU-Autoencoder: the model produces the anomaly score, this module interprets the window contents.",
+  "sensitive_event_names": [
+    "CreateUser", "CreateAccessKey", "CreateLoginProfile", "UpdateLoginProfile",
+    "AttachUserPolicy", "PutUserPolicy", "AddUserToGroup", "AttachRolePolicy",
+    "PutRolePolicy", "CreateRole", "CreatePolicy", "DeleteUser", "DeleteAccessKey",
+    "StopLogging", "StartLogging", "DeleteTrail", "UpdateTrail", "PutBucketAcl",
+    "PutBucketPolicy", "AuthorizeSecurityGroupIngress", "ModifySnapshotAttribute",
+    "ConsoleLogin", "ImportKeyPair", "CreateKeyPair", "RegisterImage",
+    "CreateSnapshot", "CopySnapshot", "TerminateInstances", "DeleteBucket"
+  ],
+  "high_risk_event_names": [
+    "CreateAccessKey", "CreateLoginProfile", "AttachUserPolicy", "PutUserPolicy",
+    "AddUserToGroup", "StopLogging", "DeleteTrail", "UpdateTrail", "DeleteUser",
+    "DeleteAccessKey", "PutBucketAcl", "PutBucketPolicy",
+    "AuthorizeSecurityGroupIngress", "ModifySnapshotAttribute", "ConsoleLogin"
+  ],
+  "rules": [
+    {
+      "technique_id": "T1098.001",
+      "technique_name": "Account Manipulation: Additional Cloud Credentials",
+      "tactic": "Persistence, Privilege Escalation",
+      "match_event_names": ["CreateAccessKey", "CreateLoginProfile", "UpdateLoginProfile", "ImportKeyPair"],
+      "min_count": 1,
+      "priority": 10,
+      "rationale": "Creation of additional cloud credentials (access keys, console login profiles, imported key pairs) inside the detected window is direct evidence of account manipulation for persistent access."
+    },
+    {
+      "technique_id": "T1098",
+      "technique_name": "Account Manipulation",
+      "tactic": "Persistence, Privilege Escalation",
+      "match_event_names": ["AttachUserPolicy", "PutUserPolicy", "AddUserToGroup", "AttachRolePolicy", "PutRolePolicy", "CreateRole", "CreatePolicy"],
+      "min_count": 1,
+      "priority": 20,
+      "rationale": "IAM policy or group membership changes observed in the detected window indicate manipulation of account permissions."
+    },
+    {
+      "technique_id": "T1562.008",
+      "technique_name": "Impair Defenses: Disable or Modify Cloud Logs",
+      "tactic": "Defense Evasion",
+      "match_event_names": ["StopLogging", "DeleteTrail", "UpdateTrail", "StartLogging"],
+      "min_count": 1,
+      "priority": 5,
+      "rationale": "CloudTrail logging was stopped, deleted, or reconfigured in the detected window - an adversary hiding activity from audit logs."
+    },
+    {
+      "technique_id": "T1136.003",
+      "technique_name": "Create Account: Cloud Account",
+      "tactic": "Persistence",
+      "match_event_names": ["CreateUser"],
+      "min_count": 1,
+      "priority": 15,
+      "rationale": "A new IAM user was created inside the detected window - creating a cloud account for persistent access."
+    },
+    {
+      "technique_id": "T1531",
+      "technique_name": "Account Access Removal",
+      "tactic": "Impact",
+      "match_event_names": ["DeleteUser", "DeleteAccessKey"],
+      "min_count": 1,
+      "priority": 18,
+      "rationale": "IAM users or access keys were deleted in the detected window, removing other principals' access."
+    },
+    {
+      "technique_id": "T1078.004",
+      "technique_name": "Valid Accounts: Cloud Accounts",
+      "tactic": "Initial Access, Persistence, Privilege Escalation, Defense Evasion",
+      "match_event_names": ["ConsoleLogin"],
+      "min_count": 1,
+      "priority": 25,
+      "rationale": "Console sign-in with valid credentials observed in a window the model scored as anomalous - abuse of legitimate cloud accounts."
+    },
+    {
+      "technique_id": "T1087.004",
+      "technique_name": "Account Discovery: Cloud Account",
+      "tactic": "Discovery",
+      "match_event_names": ["ListUsers", "GetUser", "ListGroupsForUser", "ListAttachedUserPolicies", "ListAccessKeys", "ListUserPolicies", "GetAccountSummary"],
+      "min_count": 3,
+      "priority": 40,
+      "rationale": "Repeated IAM account/policy enumeration (3+ lookups) inside the detected window indicates cloud account discovery."
+    },
+    {
+      "technique_id": "T1069.003",
+      "technique_name": "Permission Groups Discovery: Cloud Groups",
+      "tactic": "Discovery",
+      "match_event_names": ["ListEntitiesForPolicy", "ListPolicies", "ListRolePolicies", "ListRoles", "ListAttachedUserPolicies", "GetPolicy", "GetPolicyVersion"],
+      "min_count": 5,
+      "priority": 45,
+      "rationale": "Repeated IAM policy/role enumeration (5+ lookups) inside the detected window indicates permission-group discovery in the cloud account."
+    },
+    {
+      "technique_id": "T1580",
+      "technique_name": "Cloud Infrastructure Discovery",
+      "tactic": "Discovery",
+      "match_event_names": ["DescribeInstances", "DescribeSnapshots", "DescribeVolumes", "DescribeVpcs", "DescribeSecurityGroups", "DescribeKeyPairs", "DescribeDBInstances", "DescribeLoadBalancers", "ListBuckets", "DescribeSpotPriceHistory", "DescribeSnapshotAttribute"],
+      "min_count": 10,
+      "priority": 50,
+      "rationale": "Heavy cloud resource enumeration (10+ Describe/List calls) inside the detected window indicates infrastructure discovery."
+    },
+    {
+      "technique_id": "T1619",
+      "technique_name": "Cloud Storage Object Discovery",
+      "tactic": "Discovery",
+      "match_event_names": ["GetBucketAcl", "GetBucketPolicy", "GetBucketLocation", "GetBucketVersioning", "GetBucketLogging", "ListBuckets", "GetBucketEncryption", "GetBucketTagging"],
+      "min_count": 8,
+      "priority": 55,
+      "rationale": "Repeated S3 bucket metadata enumeration (8+ calls) inside the detected window indicates cloud storage discovery."
+    },
+    {
+      "technique_id": "T1496",
+      "technique_name": "Resource Hijacking",
+      "tactic": "Impact",
+      "match_event_names": ["RunInstances"],
+      "min_count": 8,
+      "priority": 60,
+      "rationale": "Burst of EC2 RunInstances (8+) inside a window the model scored as anomalous indicates possible compute-resource abuse (e.g. crypto-mining provisioning)."
+    },
+    {
+      "technique_id": "T1078",
+      "technique_name": "Valid Accounts",
+      "tactic": "Initial Access, Persistence, Privilege Escalation, Defense Evasion",
+      "match_event_names": ["AssumeRole", "GetCallerIdentity"],
+      "min_count": 12,
+      "priority": 70,
+      "rationale": "Sustained API activity under assumed roles inside the detected window indicates continued use of valid cloud credentials; mapped only when no more specific credential technique applies."
+    }
+  ]
+}

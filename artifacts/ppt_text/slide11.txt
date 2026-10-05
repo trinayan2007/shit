@@ -1,0 +1,19 @@
+PROJECTEDFUTUREWORK
+Model Implementation
+01
+Implement and train the proposed GRU-Autoencoder model.
+Model Evaluation
+02
+Evaluate anomaly detectionperformanceusing suitablemetrics.
+Threat Mapping & Response
+03
+Integrate MITRE ATT&CK mapping with risk-based response mechanisms.
+Dashboard Development
+04
+Develop a dashboard for monitoring detected threats and system activity.
+System Integration
+05
+Integrate the detection, classification, mapping and response modules.
+Testing & Validation
+06
+Test and validate the complete system using relevant cloud activity data.

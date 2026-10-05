@@ -1,0 +1,24 @@
+PROPOSED HYBRID MODEL
+GRU-Autoencoder
+1. Behavioural Features
+(CloudTrail Logs)
+Autoencoder
+2. Autoencoder
+Learns a compact representation of
+(Representation Learning)
+normal user behaviour.
+· Identifies deviations through
+reconstruction error.
+3. GRU
+GRU
+(Sequential Pattern Learning)
+GRU (Gated Recurrent Unit)
+GRU
+4. Reconstruction Error
+Captures sequential patterns in
+(Deviation Measurement)
+user activity.
+· Learns temporal relationships
+between events.
+5. Anomaly Detection
+(Normal / Anomalous)

@@ -1,0 +1,13 @@
+PROGRESSSINCEREVIEW1
+Hybrid Model Finalized
+01
+Detection Flow Defined
+02
+Established the flow from behavioural features to Autoencoder to GRU to
+reconstruction error to anomaly detection.
+Implementation Preparation
+03
+Prepared the technical workflow and development requirements
+for model implementation and evaluation.
+CURRENTSTATUS:
+Proposed model finalized I  Implementation in progress

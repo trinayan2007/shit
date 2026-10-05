@@ -1,0 +1,52 @@
+{
+  "generated_by": "scripts/profile_data.py + scripts/verify_data.py + scripts/cardinality.py (measured, not assumed)",
+  "files": [
+    {"name": "dec12_18features.csv", "bytes": 830904812, "rows": 1939207, "columns": 18, "selected": false,
+     "reason_rejected": "eventTime is month-granularity (0/1939207 ISO-valid); sentinel-filled nulls; superset of events equals nineteen file"},
+    {"name": "nineteenFeaturesDf.csv", "bytes": 1042474776, "rows": 1939207, "columns": 19, "selected": true,
+     "reason_selected": "same eventID set (1225784 unique, 0 only-in-other), full ISO-8601 timestamps 100% valid, true nulls, adds requestID"}
+  ],
+  "comparison": {
+    "relationship": "different preprocessing stages of the same underlying events",
+    "shared_unique_event_ids": 1225784,
+    "only_in_dec12": 0,
+    "only_in_nineteen": 0,
+    "duplicate_event_id_rows_both_files": 713423
+  },
+  "timestamps": {
+    "selected_column": "eventTime",
+    "format": "YYYY-MM-DDTHH:MM:SSZ",
+    "valid_iso": 1939207,
+    "empty": 0,
+    "min": "2017-02-12T19:57:06Z",
+    "max": "2020-10-07T21:03:30Z"
+  },
+  "identity": {
+    "grouping_key": "userIdentityarn fallback userIdentityprincipalId fallback normalized userIdentityaccountId fallback sourceIPAddress",
+    "userIdentitytype": {"IAMUser": 1825650, "AWSService": 57616, "AssumedRole": 42315, "Root": 10997, "AWSAccount": 2628, "": 1},
+    "userName_distinct": 8,
+    "userName_counts": {"backup": 915834, "Level6": 905082, "": 110185, "SecurityMokey": 4522, "flaws": 3372, "piper": 147, "Level5": 39, "HIDDEN_DUE_TO_SECURITY_REASONS": 26},
+    "arn_distinct": 58,
+    "principalId_distinct": 114,
+    "accountId_distinct": 313
+  },
+  "event_sources": {"distinct": 164, "top": {"ec2.amazonaws.com": 1543250, "sts.amazonaws.com": 96796, "s3.amazonaws.com": 87991, "iam.amazonaws.com": 65991, "rds.amazonaws.com": 17827, "lambda.amazonaws.com": 12265}},
+  "event_names": {"distinct": 1242, "top": {"RunInstances": 1323105, "DescribeSnapshots": 102510, "AssumeRole": 79322, "GetBucketAcl": 42651, "DescribeInstances": 18935, "GetCallerIdentity": 17128}},
+  "regions_distinct": 17,
+  "event_types": {"AwsApiCall": 1938504, "AwsServiceEvent": 603, "AwsConsoleSignIn": 99, "AwsConsoleAction": 1},
+  "error_codes": {"distinct": 104, "empty": 431493, "top": {"Client.RequestLimitExceeded": 779330, "Client.UnauthorizedOperation": 351760, "AccessDenied": 120988, "Client.Unsupported": 101226, "Server.InsufficientInstanceCapacity": 59323, "Client.InstanceLimitExceeded": 43272, "NoSuchBucket": 29170}},
+  "missing_pct": {"requestParametersinstanceType": 31.77, "errorMessage": 22.66, "errorCode": 22.25, "userIdentityuserName": 5.68, "userIdentityaccessKeyId": 3.29, "userIdentityarn": 3.11, "userIdentityprincipalId": 3.06, "userIdentityaccountId": 2.97, "requestID": 0.04},
+  "labels": {"ground_truth_insider_labels": false, "supervised_supported": false, "unsupervised_anomaly_detection_supported": true, "note": "no label column exists in either CSV; errorCode is an AWS API error, not a threat label"},
+  "sequence_plan": {"group_by": "principal_key", "order": ["eventTime", "eventID"], "length": 32, "stride": 16, "short_seq": "zero-pad + mask", "split": "temporal 80/20 by eventTime quantile, windows built within split, never shuffled before windowing"},
+  "model_input": {"shape": "(batch, 32, ~130)", "dtype": "float32", "score": "masked mean squared reconstruction error"},
+  "limitations": [
+    "no insider labels => no supervised metrics fabricated",
+    "public flaws.cloud CTF corpus (account 811596193553), not labeled insider data; majority-normal assumption",
+    "backup+Level6 identities hold 94.7% of rows",
+    "RunInstances is 68% of events; RequestLimitExceeded dominates errors",
+    "no S3 object-level events (GetObject/PutObject=0)",
+    "dec12_18features.csv timestamps month-granularity => rejected"
+  ],
+  "sensitive_events_present": {"CreateUser": 43, "CreateAccessKey": 53, "AttachUserPolicy": 32, "AddUserToGroup": 3, "ConsoleLogin": 81, "StopLogging": 2, "DeleteTrail": 1, "UpdateTrail": 1, "PutBucketAcl": 93, "PutBucketPolicy": 79, "ModifySnapshotAttribute": 56, "AuthorizeSecurityGroupIngress": 14, "DeleteUser": 6, "DeleteAccessKey": 22, "DeleteBucket": 100, "CreateLoginProfile": 4, "CreateRole": 18, "AttachRolePolicy": 15},
+  "ppt": {"slides": 13, "ocr_path": "artifacts/ppt_text/", "methodology": "CloudTrail -> preprocess -> features -> HYBRID GRU-Autoencoder -> threat classification -> MITRE ATT&CK mapping -> risk assessment -> low:alert / medium:notify / high:block -> dashboard"}
+}

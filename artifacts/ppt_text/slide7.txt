@@ -1,0 +1,56 @@
+PROJECTED
+PLAN
+The project will be implemented through sequential development stages
+leading to an integrated insider threat detection and response system.
+01
+02
+03
+04
+05
+06
+Data Preprocessing
+Threat
+CloudTrail Log
+Hybrid Model
+Automated
+Dashboard,
+& Feature
+Classification &
+Development
+Response
+Testing &
+Collection
+Engineering
+MITREATT&CK
+Integration
+Evaluation
+(GRU-Autoencoder)
+Mapping
+Collect AWS
+Clean, preprocess
+Design and train
+Classify detected
+Implement automated
+Developinteractive
+CloudTrail logs
+and transform data;
+hybrid model
+threats and map
+response mechanisms
+dashboard, perform
+and relevant data
+extract meaningful
+using GRU-Autoencoder
+them to the
+for alerting, notifying
+testing and evaluate
+for insider threat
+features for model
+to detect insider
+MITREATT&CK
+and blocking threats.
+system performance.
+detection.
+training.
+threat behaviors.
+Framework.

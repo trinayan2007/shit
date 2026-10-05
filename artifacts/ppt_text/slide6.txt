@@ -1,0 +1,12 @@
+RESEARCHGAP
+01
+Limited hybrid approaches - Most existing studies use individual ML/DL
+models or isolated ensemble methods rather than a unified hybrid approach.
+Limited integration with MITRE ATT&CK - Many solutions detect
+02
+anomalies but do not map threats to the MITRE ATT&CK framework for
+standardized classification and context.
+Lack of automated response and real-time monitoring in a unified
+03
+framework - Few studies combine risk assessment, automated response
+(e.g., blocking), and real-time dashboard monitoring in cloud environments.

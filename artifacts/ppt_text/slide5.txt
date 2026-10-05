@@ -1,0 +1,129 @@
+LITERATUREREVIEW
+Author(s)
+Year
+Title
+Methodology
+Results
+Research Gap
+Scenario-based analysis using
+Effective in detecting insiders
+Generalization to unseen
+Tian et al.
+2025
+Insiderthreatdetectionfor
+machine learning models on
+across multiple specific
+scenarios and automated
+specific threat scenarios
+behavioral datasets.
+threat scenarios.
+mitigation not addressed.
+Unmasking insider threats using
+Hybrid model combining
+Improved detection
+Lacks integration with
+Lavanya et al.
+2025
+a robust hybrid optimized
+generative pre-trained
+performance and handles
+MITREATT&CKand
+generative pretrainedneural
+networks with optimization
+class imbalance effectively.
+real-time response.
+network approach
+techniques.
+Enhancing InsiderThreat
+Ensemble of Random Forest,
+Higher accuracy and lower
+Threat classification and
+10
+Kumar et al.
+2025
+DetectioninCloud Environments
+AdaBoost and CatBoost on
+with Ensemble Learning
+false positives compared to
+automatedblockingnot
+Techniques
+cloud log datasets.
+single algorithms.
+considered.
+Hybrid deep learning model
+SPCAGAN for data augmentation
+Improved detection accuracy
+Real-time deployment and
+Gayathri et al.
+2024
+usingSPCAGANaugmentation
+and hybrid Bayesian neural
+with enhanced robustness
+response mechanism not
+forinsider threat analysis
+network for classification.
+on imbalanced data.
+explored.
+Comparative evaluation of data
+EvaluatesSMOTE,ADASYN,
+Focal losswithCNNachieved
+Doesnotconsiderbehavioral
+12
+Al-Shehari et al.
+2024
+imbalanceaddressing techniques
+for CNN-based insider threat
+cost-sensitive learning and
+best performance on
+context orthreatintelligence
+detection
+focal loss with CNN models.
+imbalanced datasets.
+integration.
+Insider threat detection using
+Compares SVM,Random
+Random Forest achieved
+Deep learning models and
+13
+Manoharan et al.
+2024
+supervised machine learning
+Forest,XGBoost and others
+highest accuracy (98.45%)
+real-time detection not
+algorithms
+on CERT r4.2 dataset.
+and F1-score.
+explored.
+Deeplearning-based
+Siamese neural networkwith
+High authentication accuracy
+Limited evaluation on cloud
+14
+Budzys et al.
+2024
+authenticationforinsiderthreat
+CNNbranchesforbehavioral
+and effective in identifying
+environments and threat
+detectionincriticalinfrastructure
+authentication.
+insider anomalies.
+response actions.
+Reconstruction-based deep
+TransferLearning-Based Robust
+Robust detection across
+Does not include automated
+15
+Kim et al.
+2024
+InsiderThreatDetection
+learning model with transfer
+different organizationswith
+mitigation and risk
+learning for anomaly detection.
+limited labeled data.
+assessment.
+UEBA-User and Entity BehaviorAnalyticsILSTM-Long Short-TermMemory
+BiLSTM-Bidirectional LSTM
+1|XAl-Explainable Al

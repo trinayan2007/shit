@@ -1,0 +1,8 @@
+{
+  "feature_dim": 138,
+  "dense_hidden": 64,
+  "gru_hidden": 64,
+  "gru_layers": 1,
+  "dropout": 0.0,
+  "bidirectional": false
+}

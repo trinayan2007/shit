@@ -1,0 +1,37 @@
+REFERENCES
+1.
+Paduvilan et al. (2026) —Attention-driven fusion of sequential and graph neural models for insider threat detection in UEBA -
+combinessequentialandgraphneuralrepresentationsforinsider-threatdetection.
+2.
+3.
+Zhang et al. (2026) — BTiTD: An insider threat detection method based on behavior-timestamp dual-stream network -
+combines behavioral and timestamp sequences using TimesNet, BiLSTM and attention.
+4.
+Yuan et al.(2026) —FusionlTD: Enhanced cross-modal insider threat perception framework via behavior-semantic fusion 一
+5.
+Ye etal.(2025)—Researchon insiderthreatdetectionbasedonpersonalizedfederated learning andbehaviorlog analysis一
+appliespersonalizedfederatedlearning tobehavioral-log-based insider-threat detection.
+6.
+P. Arul Selvam & Tamije Selvy (2025) — Explainable Al (XAl) for Insider Threat Detection: Balancing Security and Transparency
+in Cloud Computing-combines anomaly detection withSHAP,LIME and counterfactual explanations.
+7.
+Kotb et al.(2025)—A novel deep synthesis-based insiderintrusion detection(DS-lID) model for malicious insiders and
+8.
+9.
+10.
+MadanKumaret al.(2025)—Enhancing InsiderThreatDetection inCloud Environmentswith EnsembleLearningTechniques一
+11.
+Gayathri,Sajjanhar&Xiang(2024)—Hybrid deeplearning model using SPCAGANaugmentation forinsider threat analysis一
+uses SPCAGAN for synthetic data generation and a hybrid Bayesian neural-network approach.
+12.
+Al-Sheharietal.(2024)-ComparativeevaluationofdataimbalanceaddressingtechniquesforCNN-basedinsiderthreatdetection-
+evaluates different techniquesforhandling class imbalance in CNN-based detection.
+13.
+Manoharan et al. (2024) — Insider threat detection using supervised machine learning algorithms — compares supervised ML algorithms
+using the CERTr4.2dataset;RandomForest achieved thebest reported accuracy/F1among thetested approaches.
+14.
+Budzys,Kurasova&Medvedev(2024)—Deeplearning-based authenticationforinsiderthreat detection incritical infrastructure—uses
+a Siamese neural networkwith CNN branches forbehavioral authentication.
+15.
+Kim,Kim&Kim(2024)—TransferLearning-Based Robust InsiderThreat Detection—appliesreconstruction-based deep-learning
+anomalydetectionwithtransferlearning.

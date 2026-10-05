@@ -1,0 +1,38 @@
+{
+  "rows": 1225784,
+  "feature_dim": 138,
+  "split_epoch": 1566604254,
+  "split_epoch_human": "2019-08-23 23:50:54+00:00",
+  "train_rows": 980627,
+  "val_rows": 245157,
+  "principals": 412,
+  "vocab_source": "train split only (temporal 80/20)",
+  "top_k": {
+    "eventName": 40,
+    "eventSourceFamily": 25,
+    "errorCode": 8,
+    "sourceIPAddress": 12
+  },
+  "feature_names_head": [
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "is_weekend",
+    "is_night",
+    "idtype=IAMUser",
+    "idtype=AWSService",
+    "idtype=AssumedRole",
+    "idtype=Root",
+    "idtype=AWSAccount",
+    "idtype=EMPTY",
+    "eventtype=AwsApiCall",
+    "eventtype=AwsServiceEvent",
+    "eventtype=AwsConsoleSignIn",
+    "eventtype=AwsConsoleAction",
+    "region=ap-northeast-1",
+    "region=ap-northeast-2",
+    "region=ap-northeast-3",
+    "region=ap-south-1"
+  ]
+}

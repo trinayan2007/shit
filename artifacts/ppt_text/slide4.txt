@@ -1,0 +1,133 @@
+LITERATUREREVIEW
+Author(s)
+Year
+Title
+Methodology
+Results
+Research Gap
+Attention-drivenfusion of
+Combines LSTM for sequential
+Achieved higher detection
+Doesnot addressthreat
+Paduvilan
+sequential and graph neural
+behavior and Graph Neural
+2026
+accuracy and F1-score
+classificationor automated
+et al.
+modelsforinsiderthreat
+Network with attention
+compared tostate-of-the-art
+response in cloud
+detectioninUEBA
+mechanism onUEBA data.
+baselines.
+environments.
+Risk-confidenceco-estimation
+Attention-based BiLSTM model
+Improved early detection of
+Lacks integration with threat
+2
+Paul et al.
+ininsiderthreatdetection
+with uncertainty estimation to
+2026
+high-risk insiders with better
+frameworks like MITRE
+using uncertainty-aware deep
+generate risk scores for insider
+sequential models
+threats.
+risk-confidence estimation.
+ATT&CK.
+BTITD:Aninsiderthreat
+Dual-stream model using
+Outperformed baseline
+TimesNet for timestamp
+No consideration for
+3
+Zhang et al.
+detectionmethodbasedon
+2026
+models in F1-score and
+behavior-timestamp dual-
+sequencesand BiLSTMfor
+automated mitigation or
+behavior sequences with
+detection rate on benchmark
+streamnetwork
+real-time response.
+attention.
+datasets.
+FusionlTD:Enhanced cross-
+Builds behavior graphs and
+Significant improvement in
+Limited focus on cloud
+Yuan et al.
+2026
+modal insider threatperception
+applies cross-modal semantic
+detection performance and
+log sources like AWS
+framework via behavior-
+fusionforinsiderthreat
+perception.
+model robustness.
+CloudTrail.
+semanticfusion
+Researchoninsiderthreat
+Personalized Federated
+Achieved high detection
+detectionbased on
+Does not incorporate threat 
+5
+Ye et al.
+2025
+Learning with behavior log
+accuracy while preserving
+personalized federated
+classification or risk scoring
+learning and behavior
+analysis on distributed
+userprivacy across
+mechanisms.
+log analysis
+user data.
+organizations.
+ExplainableAI(XAl)forInsider
+Uses anomaly detection with
+Selvam &
+Threat Detection: Balancing
+Improved detection with
+XAI techniques (SHAP, LIME)
+Doesnotprovideautomated
+2025
+Security and Transparency in
+interpretable explanations
+Selvy
+for explanations on cloud
+response orintegration with
+Cloud Computing
+data.
+for security analysts.
+threat frameworks.
+A novel deep synthesis-based
+insiderintrusiondetection
+Deep synthesis-based model
+High detection accuracy on
+Needs real-time deployment
+Kotb et al.
+2025
+(DS-lID)modelformalicious
+using autoencoders and
+malicious insider and Al-
+and risk-based response
+insidersandAl-generated
+classification layers on log data.
+generated threat scenarios.
+mechanisms.
+threats
+UEBA-User and Entity BehaviorAnalytics|LSTM-Long Short-Term Memory
+BiLSTM-BidirectionalLSTM
+|XAl-ExplainableAl

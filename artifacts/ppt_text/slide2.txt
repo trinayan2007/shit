@@ -1,0 +1,24 @@
+PROBLEMSTATEMENT
+aws
+Authorized users can misuse their legitimate
+CloudTrail
+Logs
+cloud access, making insider activities difficult
+to distinguish from normal user behavior.
+AWS CloudTrail generates large volumes of
+user activity logs, making continuous
+monitoring and manual identification of
+suspicious behavior challenging.
+Large Volume
+Suspicious
+Potential
+Traditional security approaches may struggle
+of Logs
+User Activity
+Security Risk
+with evolving insider threats, while limited
+threat classification and delayed response
+Delayed Detection
+can increase cloud security risks.
+&Response
+Increases Risk

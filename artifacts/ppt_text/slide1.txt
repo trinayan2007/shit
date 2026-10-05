@@ -1,0 +1,22 @@
+W
+TM
+WOXSEN
+UNIVERSITY
+Insider Threat Classification and Detection in
+Cloud-Based Environments using a Hybrid Model
+with MITRE ATT&CK Framework and
+Automated Blocking
+REVIEW - II
+Presented By:-
+Supervised by:-
+1.
+Sakshi Singh - 24WU0101043
+Prof. Meher Gayathri Devi Tiwari
+2.
+D.BanyChowdary-24WU0101045
+3.
+S. Hari Prasad Reddy-24WU0101029
+4
+V. Aryan Manvith - 24WU0101019
+5.
+Suhas-24WU0101054

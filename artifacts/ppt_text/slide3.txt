@@ -1,0 +1,17 @@
+OBJECTIVES
+DETECT&ANALYZE
+CLASSIFY&MAPTHREATS
+3
+RESPOND&MONITOR
+INSIDERTHREATS
+USINGMITRE ATT&CK
+TOENHANCESECURITY
+Develop a Hybrid system to
+Classify threats into Low, Medium,
+Implement automated response
+detect insider threatsfrom
+and High risk levels and map them
+mechanisms and design a dashboard
+AWS CloudTrail logs.
+totheMITREATT&CKFramework.
+for real-time monitoring.

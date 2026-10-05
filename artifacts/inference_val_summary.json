@@ -1,0 +1,12 @@
+{
+  "split": "val",
+  "windows_scored": 15576,
+  "threshold": 0.05553479120135307,
+  "flagged": 1918,
+  "flagged_pct": 12.314,
+  "score_mean": 0.03403694927692413,
+  "score_max": 0.44463062286376953,
+  "step_errors_saved": true,
+  "output": "/home/enma/shit/artifacts/window_scores_val.npy",
+  "step_output": "/home/enma/shit/artifacts/step_errors_val.npy"
+}

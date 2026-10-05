@@ -1,0 +1,39 @@
+PROPOSEDMETHODOLOGY
+Data
+Feature
+HYBRID Model
+Threat
+MITREATT&CK
+Risk
+AWS
+Preprocessing
+Engineering
+Classification
+(GRU-Autoencoder)
+Mapping
+Assessment
+CloudTrail Logs
+Threat Level?
+ARROWKEY
+SHAPE KEY
+ProcessFlow
+ProcessStep
+(Sequential Steps)
+(Action / Activity)
+Low
+Medium
+High
+DecisionFlow
+(Based onThreat Level)
+Decision Point
+(Condition Check)
+Feedback/OutputFlow
+(ResultstoDashboard)
+Generate Alert
+NotifyAdministrator
+Automated Blocking
+Theprocessbegins with collecting andpreparingAWS CloudTrail logs,followed byfeature
+engineeringandahybridmodel todetectpotential insiderthreats.
+Detected threats aremapped toMITREATT&CKframework,assessed forseverity,and the
+appropriateresponseistriggered andshownintheinteractivedashboard.
+InteractiveDashboard
